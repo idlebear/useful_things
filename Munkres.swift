@@ -1,11 +1,27 @@
-//
-// Pending changes:
-//  - get rid of the class -- it makes it awkward to work with and just ugly in general.  A simple function will do that takes the 
-//  array of values and returns the resulting array of assignments
+// Copyright 2017 -- Barry Gilhuly 
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// 	http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// 
+
+
 //
 //  - Make the stored data type a generic, but that is going to require
 //  some negotiation with the swift gods....
 //
+
+public func calculateMunkres( withData data: [[Double]] ) -> [(Int,Int)] {
+    return Munkres(withData: data).resolve()
+}
 
 
 fileprivate
@@ -340,10 +356,6 @@ class Munkres {
         
         return result
     }
-}
-
-public func calculateMunkres( withData data: [[Double]] ) -> [(Int,Int)] {
-    return Munkres(withData: data).resolve()
 }
 
 
